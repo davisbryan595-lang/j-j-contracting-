@@ -23,11 +23,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         {/* Logo */}
-        <div className="mb-8 flex justify-center">
-          <div className="glass rounded-3xl p-8 hover:scale-105 transition-transform duration-500">
-            <Image src="/logo.png" alt="J&J Contracting Logo" width={200} height={200} className="mx-auto" priority />
-          </div>
-        </div>
+        
 
         {/* Main Heading */}
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance">
