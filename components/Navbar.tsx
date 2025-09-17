@@ -32,44 +32,37 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo (enlarged + styled) */}
-          <div
-            className="flex-shrink-0 cursor-pointer"
-            onClick={() => scrollToSection("hero")}
-          >
-            <div className="glass rounded-2xl p-2 hover:scale-105 transition-transform duration-500">
-              <Image
-                src="/logo.png"
-                alt="J&J Contracting Logo"
-                width={120}
-                height={125}
-                priority
-                className="w-[100px] sm:w-[120px] h-auto"
-              />
-            </div>
+        <div className="flex items-center justify-between h-28"> {/* taller navbar */}
+          {/* Logo */}
+          <div className="flex-shrink-0 cursor-pointer" onClick={() => scrollToSection("hero")}>
+            <Image
+              src="/logo.png"
+              alt="J&J Contracting Logo"
+              height={125}
+              width={125}
+              className="hover:scale-110 transition-transform"
+              priority
+            />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {["Home", "About", "Services", "Gallery", "Testimonials", "Contact"].map(
-                (item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-white hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors"
-                  >
-                    {item}
-                  </button>
-                )
-              )}
+            <div className="ml-10 flex items-baseline space-x-8">
+              {["hero", "about", "services", "gallery", "testimonials", "contact"].map((id) => (
+                <button
+                  key={id}
+                  onClick={() => scrollToSection(id)}
+                  className="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors"
+                >
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </button>
+              ))}
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button onClick={() => scrollToSection("contact")} size="lg" className="px-6">
+            <Button onClick={() => scrollToSection("contact")} size="sm">
               Get a Free Quote
             </Button>
           </div>
@@ -80,7 +73,7 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-white hover:text-blue-400 p-2 rounded-lg transition-colors"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -88,19 +81,17 @@ export function Navbar() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden glass-dark rounded-2xl mt-2 p-4 space-y-2">
-            {["Home", "About", "Services", "Gallery", "Testimonials", "Contact"].map(
-              (item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left text-white hover:text-blue-400 px-3 py-2 text-base font-medium transition-colors"
-                >
-                  {item}
-                </button>
-              )
-            )}
+            {["hero", "about", "services", "gallery", "testimonials", "contact"].map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="block w-full text-left text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors"
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </button>
+            ))}
             <div className="pt-2">
-              <Button onClick={() => scrollToSection("contact")} size="lg" className="w-full">
+              <Button onClick={() => scrollToSection("contact")} size="sm" className="w-full">
                 Get a Free Quote
               </Button>
             </div>
