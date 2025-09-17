@@ -43,7 +43,7 @@ export function Navbar() {
                 src="/logo.png"
                 alt="J&J Contracting Logo"
                 width={120}
-                height={140}
+                height={130}
                 priority
                 className="w-[100px] sm:w-[120px] h-auto"
               />
