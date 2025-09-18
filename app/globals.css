@@ -4,39 +4,39 @@
 
 /* CSS Variables */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --background: #ffffff; /* changed from oklch(1 0 0) */
+  --foreground: #000000; /* text color on white background */
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #0ea5e9; /* blue from your gradient */
+  --primary-foreground: #ffffff;
+  --secondary: #e5e7eb; /* light grey */
+  --secondary-foreground: #000000;
+  --muted: #f3f4f6;
+  --muted-foreground: #4b5563;
+  --accent: #ff7a00;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d1d5db;
+  --input: #f9fafb;
+  --ring: #3b82f6;
+  --chart-1: #0ea5e9;
+  --chart-2: #2563eb;
+  --chart-3: #1d4ed8;
+  --chart-4: #f97316;
+  --chart-5: #ea580c;
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #f9fafb;
+  --sidebar-foreground: #000000;
+  --sidebar-primary: #0ea5e9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ff7a00;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #d1d5db;
+  --sidebar-ring: #3b82f6;
 }
 
 /* Base Layer */
@@ -53,13 +53,13 @@
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* subtle border for visibility on white */
 }
 
 .glass-dark {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1); /* lighter for dark elements */
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Gradient styles */
@@ -76,9 +76,9 @@
 
 /* Animated background */
 .animated-bg {
-  background: radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 122, 0, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.2) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 50%, rgba(14, 165, 233, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 122, 0, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -104,7 +104,7 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #0ea5e9, #ff7a00);
